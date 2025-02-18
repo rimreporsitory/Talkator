@@ -43,7 +43,7 @@
         header {
             background: linear-gradient(45deg, #ff69b4, #ff1493);
             color: white;
-            padding: 20px;
+            padding: 15px 20px; /* Reduced padding */
             position: fixed;
             width: 100%;
             top: 0;
@@ -57,7 +57,7 @@
 
         header h1 {
             margin: 0;
-            font-size: 3.5em;
+            font-size: 3.2em; /* Reduced font size */
             font-weight: 600;
             animation: smoothTyping 3s steps(30) infinite;
             border-right: 3px solid white;
@@ -65,7 +65,7 @@
         }
 
         .motto {
-            font-size: 1.4em;
+            font-size: 1.2em; /* Reduced font size */
             color: white;
             margin-left: 20px;
             font-weight: 400;
@@ -102,6 +102,7 @@
             background: url('https://files.catbox.moe/amml26.jpg') no-repeat center center/cover;
             color: white;
             animation: moveUp 2s ease-out;
+            margin-top: 100px; /* Added margin to prevent overlap */
         }
 
         .hero h2 {
@@ -162,98 +163,43 @@
             border-radius: 10px;
             padding: 20px;
             width: 45%;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            margin: 10px;
-            animation: moveUp 1.5s ease-out;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            margin-bottom: 30px;
+            animation: fadeIn 2s ease-in-out;
         }
 
-        .profile h4 {
-            font-size: 1.6em;
+        .profile img {
+            width: 100%;
+            border-radius: 10px;
             margin-bottom: 15px;
+        }
+
+        .profile h3 {
+            font-size: 1.8em;
+            margin-bottom: 10px;
         }
 
         .profile p {
             font-size: 1.1em;
+            margin-bottom: 15px;
         }
 
-        /* Footer */
         footer {
-            background-color: #ff69b4;
+            background-color: #ff1493;
             color: white;
-            text-align: center;
             padding: 20px;
-            font-size: 1.1em;
+            text-align: center;
             margin-top: 50px;
-            animation: fadeIn 2s ease-in-out;
         }
 
-        footer iframe {
-            border: none;
-            width: 100%;
-            height: 200px;
-        }
-
-        /* Gallery Section */
-        .gallery {
-            padding: 60px 20px;
-            text-align: center;
-            background-color: #fff;
-            animation: fadeIn 1.8s ease-in-out;
-        }
-
-        .gallery h2 {
-            font-size: 2.5em;
-            font-weight: 600;
-            margin-bottom: 20px;
-            border-bottom: 2px solid #ff1493;
-            display: inline-block;
-            padding-bottom: 10px;
-        }
-
-        .gallery img {
-            width: 30%;
-            margin: 15px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s ease, filter 0.3s ease;
-        }
-
-        .gallery img:hover {
-            transform: scale(1.05);
-            filter: brightness(1.1);
-        }
-
-        /* Instagram Section */
-        .instagram {
-            padding: 60px 20px;
-            text-align: center;
-            background-color: #ff69b4;
-            color: white;
-            animation: fadeIn 2s ease-in-out;
+        footer p {
+            font-size: 1.2em;
         }
 
         /* Responsive Design */
-        @media screen and (max-width: 768px) {
-            .profile {
-                width: 45%;
-            }
-
-            .hero h2 {
-                font-size: 3.5em;
-            }
-
-            .hero p {
-                font-size: 1.2em;
-            }
-
-            .gallery img {
-                width: 45%;
-            }
-        }
-
-        @media screen and (max-width: 480px) {
-            .profile {
-                width: 80%;
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.5em;
             }
 
             .hero h2 {
@@ -261,104 +207,69 @@
             }
 
             .hero p {
-                font-size: 1.1em;
+                font-size: 1.2em;
             }
 
-            .gallery img {
-                width: 80%;
+            .content h2 {
+                font-size: 2em;
             }
 
-            nav ul {
-                display: flex;
+            .profile-container {
                 flex-direction: column;
                 align-items: center;
             }
 
-            nav ul li {
-                margin: 10px 0;
+            .profile {
+                width: 80%;
             }
         }
-
     </style>
 </head>
 <body>
-    <!-- Header -->
+
     <header>
-        <div class="container">
-            <h1>AEROZORTZI</h1>
-            <p class="motto">"Satukan aspirasi bersama kami"</p>
-            <nav>
-                <ul>
-                    <li><a href="#about">Tentang Kami</a></li>
-                    <li><a href="#achievements">Prestasi</a></li>
-                    <li><a href="#gallery">Galeri</a></li>
-                    <li><a href="#contact">Kontak</a></li>
-                </ul>
-            </nav>
-        </div>
+        <h1>AEROZORTZI</h1>
+        <div class="motto">Satukan aspirasi bersama kami</div>
+        <nav>
+            <ul>
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#about">Tentang Kami</a></li>
+                <li><a href="#services">Layanan</a></li>
+                <li><a href="#contact">Kontak</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
+    <section id="hero" class="hero">
         <h2>Selamat datang di AEROZORTZI</h2>
-        <p>Temukan potensi dan kreativitas kami di dunia pendidikan.</p>
-        <a href="#about" class="btn">Lihat Lebih Lanjut</a>
+        <p>Kami menyediakan solusi inovatif untuk masa depan yang lebih cerah</p>
+        <a href="#about" class="btn">Pelajari Lebih Lanjut</a>
     </section>
 
-    <!-- About Section -->
     <section id="about" class="content">
         <h2>Tentang Kami</h2>
-        <p>Di AEROZORTZI, kami mendorong setiap individu untuk mencapai potensi maksimal mereka. Dengan berbagai program dan kegiatan, kami berfokus pada pengembangan diri yang holistik dan berkelanjutan.</p>
+        <p>AEROZORTZI adalah platform yang menghubungkan ide dan teknologi untuk membangun masa depan yang lebih baik. Kami berdedikasi untuk memberikan solusi terbaik bagi pengguna kami.</p>
+    </section>
+
+    <section id="services" class="content">
+        <h2>Layanan Kami</h2>
         <div class="profile-container">
             <div class="profile">
-                <h4>Visi Kami</h4>
-                <p>Menciptakan generasi yang cerdas dan berkarakter.</p>
+                <img src="https://via.placeholder.com/300" alt="Layanan 1">
+                <h3>Layanan 1</h3>
+                <p>Deskripsi layanan 1 yang luar biasa dan inovatif.</p>
             </div>
             <div class="profile">
-                <h4>Misi Kami</h4>
-                <p>Memberikan pendidikan yang bermutu dan relevan dengan kebutuhan zaman.</p>
+                <img src="https://via.placeholder.com/300" alt="Layanan 2">
+                <h3>Layanan 2</h3>
+                <p>Deskripsi layanan 2 yang membantu dalam mengatasi berbagai tantangan.</p>
             </div>
         </div>
     </section>
 
-    <!-- Achievements Section -->
-    <section id="achievements" class="content">
-        <h2>Prestasi Kami</h2>
-        <p>Kami bangga telah meraih berbagai penghargaan di bidang akademik dan non-akademik. Beberapa di antaranya termasuk kompetisi sains, seni, dan olahraga.</p>
-        <div class="profile-container">
-            <div class="profile">
-                <h4>Juara 1 Kompetisi Sains</h4>
-                <p>Diadakan oleh Universitas Negeri Jakarta pada 2024.</p>
-            </div>
-            <div class="profile">
-                <h4>Juara 2 Lomba Basket</h4>
-                <p>Pertandingan antar sekolah di Kabupaten Agam.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Gallery Section -->
-    <section id="gallery" class="gallery">
-        <h2>Galeri</h2>
-        <p>Melihat aktivitas dan acara menarik yang telah kami selenggarakan.</p>
-        <div>
-            <img src="https://files.catbox.moe/amml26.jpg" alt="Foto 1">
-            <img src="https://files.catbox.moe/amml26.jpg" alt="Foto 2">
-            <img src="https://files.catbox.moe/amml26.jpg" alt="Foto 3">
-        </div>
-    </section>
-
-    <!-- Instagram Section -->
-    <section id="contact" class="instagram">
-        <h2>Temui Kami di Instagram</h2>
-        <p>Ikuti kami di Instagram untuk informasi terbaru dan inspirasi kreatif.</p>
-        <a href="https://www.instagram.com/aerozortzi_?igsh=aDFvNHNoM210d2Fu" target="_blank" class="btn">Follow Instagram</a>
-    </section>
-
-    <!-- Footer -->
     <footer>
-        <p>&copy; 2025 AEROZORTZI - SMPN 3 Lubuk Basung. All rights reserved.</p>
-        <iframe src="https://www.google.com/maps/embed?pb=...YOUR_EMBED_LINK_HERE..." width="100%" height="200"></iframe>
+        <p>&copy; 2025 AEROZORTZI. Semua hak dilindungi.</p>
     </footer>
+
 </body>
 </html>
