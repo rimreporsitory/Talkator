@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AEROZORTZI</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
     <style>
-        /* Reset Style */
+        /* Reset style */
         * {
             margin: 0;
             padding: 0;
@@ -18,6 +18,14 @@
             background-color: #ffb6c1;
             color: #333;
             scroll-behavior: smooth;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* Animasi halaman */
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
         }
 
         /* Header */
@@ -30,12 +38,14 @@
             top: 0;
             z-index: 1000;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 1.5s ease-in-out;
         }
 
         header h1 {
             margin: 0;
-            font-size: 3em;
+            font-size: 3.5em;
             font-weight: 600;
+            animation: fadeIn 2s ease-in-out;
         }
 
         .motto {
@@ -43,6 +53,7 @@
             margin-top: -10px;
             font-size: 1.3em;
             font-weight: 300;
+            animation: fadeIn 2s ease-in-out;
         }
 
         nav ul {
@@ -61,7 +72,7 @@
             color: white;
             text-decoration: none;
             font-weight: bold;
-            font-size: 1.2em;
+            font-size: 1.3em;
             transition: color 0.3s ease;
         }
 
@@ -83,21 +94,19 @@
             justify-content: center;
             align-items: center;
             position: relative;
+            animation: fadeIn 2s ease-in-out;
         }
 
         .hero h2 {
-            font-size: 3.5em;
-            animation: typing 4s steps(30) 1s infinite, blink 0.7s step-end infinite;
+            font-size: 4em;
             font-weight: 600;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+            animation: typing 5s steps(40) 1s infinite;
         }
 
         @keyframes typing {
             from { width: 0; }
-            to { width: 22em; }
-        }
-
-        @keyframes blink {
-            50% { border-color: transparent; }
+            to { width: 24em; }
         }
 
         .hero p {
@@ -112,7 +121,7 @@
             padding: 12px 30px;
             border: none;
             cursor: pointer;
-            font-size: 1.3em;
+            font-size: 1.5em;
             border-radius: 5px;
             transition: background-color 0.3s ease, transform 0.3s ease;
             animation: fadeInUp 1.2s ease-in-out;
@@ -123,22 +132,11 @@
             transform: scale(1.05);
         }
 
-        /* Animasi */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
         /* Profil Kelas */
         .content {
             padding: 60px 20px;
             text-align: center;
+            animation: fadeInUp 1.5s ease-in-out;
         }
 
         .profile-container {
@@ -146,6 +144,7 @@
             justify-content: space-around;
             flex-wrap: wrap;
             gap: 30px;
+            animation: fadeInUp 1s ease-in-out;
         }
 
         .profile {
@@ -155,6 +154,7 @@
             width: 30%;
             transition: transform 0.3s ease;
             border-radius: 10px;
+            animation: fadeInUp 1s ease-in-out;
         }
 
         .profile:hover {
@@ -162,7 +162,7 @@
         }
 
         .profile h4 {
-            font-size: 1.5em;
+            font-size: 1.6em;
             font-weight: 600;
         }
 
@@ -177,6 +177,7 @@
             padding: 50px 20px;
             text-align: center;
             margin-top: 30px;
+            animation: fadeInUp 1.8s ease-in-out;
         }
 
         .instagram a {
@@ -200,6 +201,8 @@
             color: white;
             text-align: center;
             padding: 20px;
+            font-size: 1.1em;
+            animation: fadeInUp 2s ease-in-out;
         }
 
         footer iframe {
@@ -215,11 +218,11 @@
             }
 
             .hero h2 {
-                font-size: 2.5em;
+                font-size: 3em;
             }
 
             .hero p {
-                font-size: 1.2em;
+                font-size: 1.3em;
             }
 
             .gallery img {
@@ -236,6 +239,22 @@
                 width: 80%;
             }
         }
+
+        /* Smooth scroll effect */
+        .smooth-scroll {
+            animation: smoothScroll 1s ease-in-out forwards;
+        }
+
+        @keyframes smoothScroll {
+            from {
+                opacity: 0;
+                transform: translateY(100px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
     </style>
 </head>
 <body>
@@ -243,112 +262,67 @@
     <header>
         <div class="container">
             <h1>AEROZORTZI</h1>
-            <p class="motto">"Kelas yang Bersatu, Bersama Mencapai Tujuan"</p>
+            <p class="motto">"Satukan aspirasi bersama kami"</p>
             <nav>
                 <ul>
-                    <li><a href="#">Beranda</a></li>
-                    <li><a href="#profil">Profil</a></li>
-                    <li><a href="#prestasi">Prestasi</a></li>
-                    <li><a href="#galeri">Galeri</a></li>
-                    <li><a href="#kontak">Kontak</a></li>
+                    <li><a href="#about">Tentang Kami</a></li>
+                    <li><a href="#achievements">Prestasi</a></li>
+                    <li><a href="#contact">Kontak</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section class="hero">
-        <h2>Selamat Datang di AEROZORTZI</h2>
-        <p>Kami adalah kelas yang bergerak bersama untuk masa depan yang lebih cerah.</p>
-        <a href="#profil" class="btn">Jelajahi Lebih Lanjut</a>
+    <section class="hero smooth-scroll">
+        <h2>Selamat datang di AEROZORTZI</h2>
+        <p>Temukan potensi dan kreativitas kami di dunia pendidikan.</p>
+        <a href="#about" class="btn">Lihat Lebih Lanjut</a>
     </section>
 
-    <!-- Profil Kelas -->
-    <section id="profil" class="content">
-        <h3>Profil AEROZORTZI</h3>
+    <!-- About Section -->
+    <section id="about" class="content smooth-scroll">
+        <h2>Tentang Kami</h2>
+        <p>Di AEROZORTZI, kami mendorong setiap individu untuk mencapai potensi maksimal mereka. Dengan berbagai program dan kegiatan, kami berfokus pada pengembangan diri yang holistik dan berkelanjutan.</p>
         <div class="profile-container">
             <div class="profile">
-                <h4>Visi Kelas</h4>
-                <p>Menciptakan lingkungan belajar yang penuh kreativitas dan kerjasama antar sesama.</p>
+                <h4>Visi Kami</h4>
+                <p>Menciptakan generasi yang cerdas dan berkarakter.</p>
             </div>
             <div class="profile">
-                <h4>Tujuan</h4>
-                <p>Meningkatkan kualitas akademik dan pengembangan karakter siswa untuk masa depan yang lebih baik.</p>
-            </div>
-            <div class="profile">
-                <h4>Motivasi</h4>
-                <p>Kami percaya bahwa dengan bekerja bersama, kita dapat mengatasi segala tantangan dan mencapai tujuan bersama.</p>
+                <h4>Misi Kami</h4>
+                <p>Memberikan pendidikan yang bermutu dan relevan dengan kebutuhan zaman.</p>
             </div>
         </div>
     </section>
 
-    <!-- Prestasi -->
-    <section id="prestasi" class="content">
-        <h3>Prestasi Kami</h3>
+    <!-- Achievements Section -->
+    <section id="achievements" class="content smooth-scroll">
+        <h2>Prestasi Kami</h2>
+        <p>Kami bangga telah meraih berbagai penghargaan di bidang akademik dan non-akademik. Beberapa di antaranya termasuk kompetisi sains, seni, dan olahraga.</p>
         <div class="profile-container">
             <div class="profile">
-                <h4>Juara 1 Lomba Sains</h4>
-                <p>Tim AEROZORTZI berhasil memenangkan Juara 1 dalam lomba sains tingkat kabupaten.</p>
+                <h4>Juara 1 Kompetisi Sains</h4>
+                <p>Diadakan oleh Universitas Negeri Jakarta pada 2024.</p>
             </div>
             <div class="profile">
-                <h4>Juara 2 Lomba Kesenian</h4>
-                <p>Kami juga meraih Juara 2 di lomba kesenian yang diadakan di sekolah kami.</p>
+                <h4>Juara 2 Lomba Basket</h4>
+                <p>Pertandingan antar sekolah di Kabupaten Agam.</p>
             </div>
-            <div class="profile">
-                <h4>Tim Olahraga Terbaik</h4>
-                <p>Tim olahraga kami selalu berhasil meraih penghargaan di berbagai kompetisi.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Galeri -->
-    <section id="galeri" class="content">
-        <h3>Galeri Kelas</h3>
-        <div class="gallery">
-            <img src="https://via.placeholder.com/300" alt="Galeri 1">
-            <img src="https://via.placeholder.com/300" alt="Galeri 2">
-            <img src="https://via.placeholder.com/300" alt="Galeri 3">
         </div>
     </section>
 
     <!-- Instagram Section -->
-    <section id="kontak" class="instagram">
-        <h3>Ikuti Kami di Instagram</h3>
-        <a href="https://www.instagram.com/aerozortzi_?igsh=aDFvNHNoM210d2Fu" target="_blank">Temui Kami di Instagram</a>
+    <section class="instagram smooth-scroll">
+        <h2>Temui Kami di Instagram</h2>
+        <p>Ikuti kami untuk lebih banyak informasi dan update terkini.</p>
+        <a href="https://www.instagram.com/aerozortzi_?igsh=aDFvNHNoM210d2Fu" target="_blank">Follow @aerozortzi_</a>
     </section>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2025 AEROZORTZI. Semua hak cipta dilindungi.</p>
-        <iframe src="https://www.google.com/maps/embed?pb=..." frameborder="0" allowfullscreen></iframe>
+        <p>&copy; 2025 AEROZORTZI | SMPN 3 Lubuk Basung</p>
+        <p>Semua hak cipta dilindungi.</p>
     </footer>
-
-    <script>
-        // Animasi untuk teks mengetik dan menghapus
-        let typingText = document.querySelector('.hero h2');
-        let text = "Selamat Datang di AEROZORTZI, Inspiratif, Cerdas, Dan Berkarakter!";
-        let i = 0;
-        let isDeleting = false;
-
-        function typeText() {
-            if (i < text.length && !isDeleting) {
-                typingText.innerHTML += text.charAt(i);
-                i++;
-            } else if (i === text.length && !isDeleting) {
-                isDeleting = true;
-            } else if (i > 0 && isDeleting) {
-                typingText.innerHTML = text.substring(0, i - 1);
-                i--;
-            } else if (i === 0 && isDeleting) {
-                isDeleting = false;
-            }
-
-            let speed = isDeleting ? 100 : 150;
-            setTimeout(typeText, speed);
-        }
-
-        typeText();
-    </script>
 </body>
 </html>
-                
