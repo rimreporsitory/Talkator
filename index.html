@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AEROZORTZI</title>
+    <title>AEROZORTZI - SMPN 3 Lubuk Basung Kelas 8A</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
     <style>
         /* Reset style */
@@ -23,11 +23,6 @@
         }
 
         /* Animasi halaman */
-        @keyframes fadeIn {
-            0% { opacity: 0; }
-            100% { opacity: 1; }
-        }
-
         @keyframes smoothTyping {
             0% { width: 0; }
             50% { width: 100%; }
@@ -43,31 +38,29 @@
         header {
             background: linear-gradient(45deg, #ff69b4, #ff1493);
             color: white;
-            padding: 15px 20px; /* Reduced padding */
+            padding: 20px;
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
             display: flex;
+            justify-content: space-between;
             align-items: center;
-            animation: fadeIn 1.5s ease-in-out;
+            animation: moveUp 1s ease-in-out;
             border-bottom: 2px solid #fff;
         }
 
         header h1 {
-            margin: 0;
-            font-size: 3.2em; /* Reduced font size */
-            font-weight: 600;
+            font-size: 2.5em;
+            font-weight: bold;
             animation: smoothTyping 3s steps(30) infinite;
             border-right: 3px solid white;
             padding-right: 10px;
         }
 
         .motto {
-            font-size: 1.2em; /* Reduced font size */
+            font-size: 1.2em;
             color: white;
-            margin-left: 20px;
             font-weight: 400;
         }
 
@@ -87,12 +80,11 @@
             font-weight: 500;
             text-transform: uppercase;
             font-size: 1.1em;
-            border-bottom: 2px solid transparent;
-            transition: border-color 0.3s ease;
+            transition: color 0.3s ease;
         }
 
         nav ul li a:hover {
-            border-color: #ff1493;
+            color: #ff1493;
         }
 
         /* Hero Section */
@@ -135,7 +127,7 @@
         .content {
             padding: 60px 20px;
             text-align: center;
-            animation: fadeIn 2s ease-in-out;
+            animation: moveUp 2s ease-in-out;
         }
 
         .content h2 {
@@ -165,7 +157,7 @@
             width: 45%;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
             margin-bottom: 30px;
-            animation: fadeIn 2s ease-in-out;
+            animation: moveUp 2s ease-in-out;
         }
 
         .profile img {
@@ -182,6 +174,23 @@
         .profile p {
             font-size: 1.1em;
             margin-bottom: 15px;
+        }
+
+        .social-links {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .social-links a {
+            font-size: 1.5em;
+            color: #ff1493;
+            margin: 0 15px;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: #ff69b4;
         }
 
         footer {
@@ -233,8 +242,8 @@
         <nav>
             <ul>
                 <li><a href="#hero">Home</a></li>
+                <li><a href="#vision">Visi & Misi</a></li>
                 <li><a href="#about">Tentang Kami</a></li>
-                <li><a href="#services">Layanan</a></li>
                 <li><a href="#contact">Kontak</a></li>
             </ul>
         </nav>
@@ -242,33 +251,44 @@
 
     <section id="hero" class="hero">
         <h2>Selamat datang di AEROZORTZI</h2>
-        <p>Kami menyediakan solusi inovatif untuk masa depan yang lebih cerah</p>
-        <a href="#about" class="btn">Pelajari Lebih Lanjut</a>
+        <p>Kami adalah kelas yang penuh semangat untuk masa depan yang lebih baik!</p>
+        <a href="#vision" class="btn">Pelajari Lebih Lanjut</a>
+        <p>Menjadikan kelas sebagai suatu persatuan dan persaudaraan yang erat dalam menjalani pendidikan, serta menciptakan lingkungan yang mendukung pertumbuhan pribadi dan sosial bagi semua anggotanya.</p>
+    </section>
+
+    <section id="mission" class="content">
+        <h2>Misi Kami</h2>
+        <p>1. Meningkatkan semangat belajar melalui kerjasama dan rasa kebersamaan.</p>
+        <p>2. Membangun karakter dan keterampilan sosial di dalam dan luar kelas.</p>
+        <p>3. Mendorong semua siswa untuk aktif berpartisipasi dalam kegiatan kelas dan sekolah.</p>
     </section>
 
     <section id="about" class="content">
         <h2>Tentang Kami</h2>
-        <p>AEROZORTZI adalah platform yang menghubungkan ide dan teknologi untuk membangun masa depan yang lebih baik. Kami berdedikasi untuk memberikan solusi terbaik bagi pengguna kami.</p>
-    </section>
+        <p>Kelas 8A SMPN 3 Lubuk Basung merupakan kelas yang berkomitmen untuk menjadi yang terbaik. Dengan semangat kebersamaan, kami selalu mendukung satu sama lain dalam setiap aktivitas belajar dan kegiatan sosial.</p>
 
-    <section id="services" class="content">
-        <h2>Layanan Kami</h2>
         <div class="profile-container">
             <div class="profile">
-                <img src="https://via.placeholder.com/300" alt="Layanan 1">
-                <h3>Layanan 1</h3>
-                <p>Deskripsi layanan 1 yang luar biasa dan inovatif.</p>
+                <img src="https://files.catbox.moe/amml26.jpg" alt="Profil Kelas">
+                <h3>Profil Kelas</h3>
+                <p>Di kelas ini, kami berkomitmen untuk saling mendukung dan berkolaborasi untuk mencapai tujuan bersama.</p>
             </div>
             <div class="profile">
-                <img src="https://via.placeholder.com/300" alt="Layanan 2">
-                <h3>Layanan 2</h3>
-                <p>Deskripsi layanan 2 yang membantu dalam mengatasi berbagai tantangan.</p>
+                <h3>Keaktifan & Partisipasi</h3>
+                <p>Dengan banyaknya kegiatan dan partisipasi dalam berbagai kompetisi, kami terus berusaha untuk berkembang dan memberikan yang terbaik.</p>
             </div>
         </div>
     </section>
 
+    <section id="contact" class="content">
+        <h2>Temui Kami di Instagram</h2>
+        <p>Ikuti kami untuk mendapatkan update terbaru tentang kegiatan kelas dan prestasi kami.</p>
+        <a href="https://www.instagram.com/aerozortzi_?igsh=aDFvNHNoM210d2Fu" target="_blank" class="btn">Instagram Kami</a>
+    </section>
+
     <footer>
-        <p>&copy; 2025 AEROZORTZI. Semua hak dilindungi.</p>
+        <p>&copy; 2025 AEROZORTZI - SMPN 3 Lubuk Basung Kelas 8A</p>
+        <p>Powered by the spirit of togetherness!</p>
     </footer>
 
 </body>
