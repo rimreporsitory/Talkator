@@ -28,6 +28,17 @@
             100% { opacity: 1; }
         }
 
+        @keyframes smoothTyping {
+            0% { width: 0; }
+            50% { width: 100%; }
+            100% { width: 0; }
+        }
+
+        @keyframes moveUp {
+            0% { transform: translateY(20px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+
         /* Header */
         header {
             background: linear-gradient(45deg, #ff69b4, #ff1493);
@@ -38,159 +49,131 @@
             top: 0;
             z-index: 1000;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            display: flex;
+            align-items: center;
             animation: fadeIn 1.5s ease-in-out;
+            border-bottom: 2px solid #fff;
         }
 
         header h1 {
             margin: 0;
             font-size: 3.5em;
             font-weight: 600;
-            text-transform: uppercase;
+            animation: smoothTyping 3s steps(30) infinite;
+            border-right: 3px solid white;
+            padding-right: 10px;
         }
 
         .motto {
-            font-style: italic;
-            margin-top: -10px;
-            font-size: 1.3em;
-            font-weight: 300;
+            font-size: 1.4em;
+            color: white;
+            margin-left: 20px;
+            font-weight: 400;
         }
 
         nav ul {
-            list-style-type: none;
-            padding: 0;
-            text-align: center;
-            margin-top: 10px;
+            list-style: none;
+            display: flex;
+            margin-left: auto;
         }
 
         nav ul li {
-            display: inline;
-            margin: 0 20px;
+            margin: 0 15px;
         }
 
         nav ul li a {
-            color: white;
             text-decoration: none;
-            font-weight: bold;
-            font-size: 1.3em;
-            transition: color 0.3s ease;
+            color: white;
+            font-weight: 500;
+            text-transform: uppercase;
+            font-size: 1.1em;
+            border-bottom: 2px solid transparent;
+            transition: border-color 0.3s ease;
         }
 
         nav ul li a:hover {
-            color: #ff1493;
+            border-color: #ff1493;
         }
 
         /* Hero Section */
         .hero {
-            background-image: url('https://files.catbox.moe/amml26.jpg');
-            background-size: cover;
-            background-position: center;
-            color: white;
-            text-align: center;
             padding: 150px 20px;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            position: relative;
-            animation: fadeIn 2s ease-in-out;
-            perspective: 1200px; /* Menambahkan perspektif */
+            text-align: center;
+            background: url('https://files.catbox.moe/amml26.jpg') no-repeat center center/cover;
+            color: white;
+            animation: moveUp 2s ease-out;
         }
 
         .hero h2 {
-            font-size: 4em;
+            font-size: 3.5em;
+            margin-bottom: 20px;
             font-weight: 600;
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
-            animation: typing 4s steps(30) 1s infinite;
-        }
-
-        @keyframes typing {
-            from { width: 0; }
-            to { width: 24em; }
         }
 
         .hero p {
             font-size: 1.5em;
-            margin: 20px 0;
-            animation: fadeInUp 1s ease-in-out;
+            margin-bottom: 20px;
         }
 
         .btn {
+            padding: 15px 30px;
             background-color: #ff1493;
             color: white;
-            padding: 12px 30px;
-            border: none;
-            cursor: pointer;
-            font-size: 1.5em;
+            text-transform: uppercase;
+            text-decoration: none;
+            font-weight: 600;
             border-radius: 5px;
-            transition: background-color 0.3s ease, transform 0.3s ease;
+            transition: background-color 0.3s ease;
         }
 
         .btn:hover {
             background-color: #ff69b4;
-            transform: scale(1.05);
         }
 
-        /* Profil Kelas */
+        /* Content Section */
         .content {
             padding: 60px 20px;
             text-align: center;
-            animation: fadeInUp 1.5s ease-in-out;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .content h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #ff1493;
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+
+        .content p {
+            font-size: 1.2em;
+            margin-bottom: 40px;
         }
 
         .profile-container {
             display: flex;
             justify-content: space-around;
             flex-wrap: wrap;
-            gap: 30px;
-            animation: fadeInUp 1s ease-in-out;
+            margin-bottom: 40px;
         }
 
         .profile {
-            background-color: #fff;
-            padding: 30px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-            width: 30%;
-            transition: transform 0.3s ease;
+            background: white;
             border-radius: 10px;
-        }
-
-        .profile:hover {
-            transform: translateY(-15px);
+            padding: 20px;
+            width: 45%;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin: 10px;
+            animation: moveUp 1.5s ease-out;
         }
 
         .profile h4 {
             font-size: 1.6em;
-            font-weight: 600;
+            margin-bottom: 15px;
         }
 
         .profile p {
-            font-size: 1.2em;
-            font-weight: 300;
-        }
-
-        /* Instagram Section */
-        .instagram {
-            background-color: #fff;
-            padding: 50px 20px;
-            text-align: center;
-            margin-top: 30px;
-            animation: fadeInUp 1.8s ease-in-out;
-        }
-
-        .instagram a {
-            display: inline-block;
-            padding: 15px 30px;
-            background-color: #ff1493;
-            color: white;
-            font-size: 1.5em;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-        }
-
-        .instagram a:hover {
-            background-color: #ff69b4;
+            font-size: 1.1em;
         }
 
         /* Footer */
@@ -201,7 +184,7 @@
             padding: 20px;
             font-size: 1.1em;
             margin-top: 50px;
-            animation: fadeInUp 2s ease-in-out;
+            animation: fadeIn 2s ease-in-out;
         }
 
         footer iframe {
@@ -215,13 +198,16 @@
             padding: 60px 20px;
             text-align: center;
             background-color: #fff;
-            animation: fadeInUp 1.8s ease-in-out;
+            animation: fadeIn 1.8s ease-in-out;
         }
 
         .gallery h2 {
             font-size: 2.5em;
             font-weight: 600;
             margin-bottom: 20px;
+            border-bottom: 2px solid #ff1493;
+            display: inline-block;
+            padding-bottom: 10px;
         }
 
         .gallery img {
@@ -237,20 +223,13 @@
             filter: brightness(1.1);
         }
 
-        /* Smooth scroll effect */
-        .smooth-scroll {
-            animation: smoothScroll 1s ease-in-out forwards;
-        }
-
-        @keyframes smoothScroll {
-            from {
-                opacity: 0;
-                transform: translateY(100px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        /* Instagram Section */
+        .instagram {
+            padding: 60px 20px;
+            text-align: center;
+            background-color: #ff69b4;
+            color: white;
+            animation: fadeIn 2s ease-in-out;
         }
 
         /* Responsive Design */
@@ -327,59 +306,59 @@
     </section>
 
     <!-- About Section -->
-    <section id="about" class="content smooth-scroll">
+    <section id="about" class="content">
         <h2>Tentang Kami</h2>
         <p>Di AEROZORTZI, kami mendorong setiap individu untuk mencapai potensi maksimal mereka. Dengan berbagai program dan kegiatan, kami berfokus pada pengembangan diri yang holistik dan berkelanjutan.</p>
         <div class="profile-container">
             <div class="profile">
                 <h4>Visi Kami</h4>
-                <p>Menjadikan Kelas Sebagai Tempat Yang Senang Untuk Pendidikan.</p>
+                <p>Menciptakan generasi yang cerdas dan berkarakter.</p>
             </div>
             <div class="profile">
                 <h4>Misi Kami</h4>
-                <p>Menjadi Pelajar Yang Berguna Bagi Nusa Dan Bangsa</p>
+                <p>Memberikan pendidikan yang bermutu dan relevan dengan kebutuhan zaman.</p>
             </div>
         </div>
     </section>
 
     <!-- Achievements Section -->
-    <section id="achievements" class="content smooth-scroll">
+    <section id="achievements" class="content">
         <h2>Prestasi Kami</h2>
         <p>Kami bangga telah meraih berbagai penghargaan di bidang akademik dan non-akademik. Beberapa di antaranya termasuk kompetisi sains, seni, dan olahraga.</p>
         <div class="profile-container">
             <div class="profile">
-                <h4>Juara 1 Kompetisi Solo Song Spenega Contest</h4>
-                <p>Diadakan oleh SMPN 3 LUBUK BASUNG pada Oktober 2024.</p>
+                <h4>Juara 1 Kompetisi Sains</h4>
+                <p>Diadakan oleh Universitas Negeri Jakarta pada 2024.</p>
             </div>
             <div class="profile">
-                <h4>Coming Soon</h4>
-                <p>Coming Soon - Prestasi Yang Luar Biasa</p>
+                <h4>Juara 2 Lomba Basket</h4>
+                <p>Pertandingan antar sekolah di Kabupaten Agam.</p>
             </div>
         </div>
     </section>
 
     <!-- Gallery Section -->
-    <section id="gallery" class="gallery smooth-scroll">
-        <h2>Galeri Kegiatan</h2>
-        <p>Berikut adalah beberapa momen terbaik kami dalam berbagai kegiatan sekolah.</p>
+    <section id="gallery" class="gallery">
+        <h2>Galeri</h2>
+        <p>Melihat aktivitas dan acara menarik yang telah kami selenggarakan.</p>
         <div>
-            <img src="https://via.placeholder.com/500x300.png?text=Galeri+1" alt="Galeri 1">
-            <img src="https://via.placeholder.com/500x300.png?text=Galeri+2" alt="Galeri 2">
-            <img src="https://via.placeholder.com/500x300.png?text=Galeri+3" alt="Galeri 3">
+            <img src="https://files.catbox.moe/amml26.jpg" alt="Foto 1">
+            <img src="https://files.catbox.moe/amml26.jpg" alt="Foto 2">
+            <img src="https://files.catbox.moe/amml26.jpg" alt="Foto 3">
         </div>
     </section>
 
     <!-- Instagram Section -->
-    <section id="contact" class="instagram smooth-scroll">
+    <section id="contact" class="instagram">
         <h2>Temui Kami di Instagram</h2>
-        <p>Ikuti kami untuk lebih banyak informasi dan update terkini.</p>
-        <a href="https://www.instagram.com/aerozortzi_?igsh=aDFvNHNoM210d2Fu" target="_blank">Follow @aerozortzi_</a>
+        <p>Ikuti kami di Instagram untuk informasi terbaru dan inspirasi kreatif.</p>
+        <a href="https://www.instagram.com/aerozortzi_?igsh=aDFvNHNoM210d2Fu" target="_blank" class="btn">Follow Instagram</a>
     </section>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2025 AEROZORTZI | SMPN 3 Lubuk Basung</p>
-        <p>Semua hak cipta dilindungi.</p>
+        <p>&copy; 2025 AEROZORTZI - SMPN 3 Lubuk Basung. All rights reserved.</p>
+        <iframe src="https://www.google.com/maps/embed?pb=...YOUR_EMBED_LINK_HERE..." width="100%" height="200"></iframe>
     </footer>
 </body>
 </html>
