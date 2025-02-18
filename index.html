@@ -30,7 +30,7 @@
 
         /* Header */
         header {
-            background-color: #ff69b4;
+            background: linear-gradient(45deg, #ff69b4, #ff1493);
             color: white;
             padding: 20px;
             position: fixed;
@@ -45,7 +45,7 @@
             margin: 0;
             font-size: 3.5em;
             font-weight: 600;
-            animation: fadeIn 2s ease-in-out;
+            text-transform: uppercase;
         }
 
         .motto {
@@ -53,7 +53,6 @@
             margin-top: -10px;
             font-size: 1.3em;
             font-weight: 300;
-            animation: fadeIn 2s ease-in-out;
         }
 
         nav ul {
@@ -95,13 +94,14 @@
             align-items: center;
             position: relative;
             animation: fadeIn 2s ease-in-out;
+            perspective: 1200px; /* Menambahkan perspektif */
         }
 
         .hero h2 {
             font-size: 4em;
             font-weight: 600;
             text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
-            animation: typing 5s steps(40) 1s infinite;
+            animation: typing 4s steps(30) 1s infinite;
         }
 
         @keyframes typing {
@@ -124,7 +124,6 @@
             font-size: 1.5em;
             border-radius: 5px;
             transition: background-color 0.3s ease, transform 0.3s ease;
-            animation: fadeInUp 1.2s ease-in-out;
         }
 
         .btn:hover {
@@ -154,7 +153,6 @@
             width: 30%;
             transition: transform 0.3s ease;
             border-radius: 10px;
-            animation: fadeInUp 1s ease-in-out;
         }
 
         .profile:hover {
@@ -202,6 +200,7 @@
             text-align: center;
             padding: 20px;
             font-size: 1.1em;
+            margin-top: 50px;
             animation: fadeInUp 2s ease-in-out;
         }
 
@@ -211,33 +210,31 @@
             height: 200px;
         }
 
-        /* Responsive */
-        @media screen and (max-width: 768px) {
-            .profile {
-                width: 80%;
-            }
-
-            .hero h2 {
-                font-size: 3em;
-            }
-
-            .hero p {
-                font-size: 1.3em;
-            }
-
-            .gallery img {
-                width: 45%;
-            }
+        /* Gallery Section */
+        .gallery {
+            padding: 60px 20px;
+            text-align: center;
+            background-color: #fff;
+            animation: fadeInUp 1.8s ease-in-out;
         }
 
-        @media screen and (max-width: 480px) {
-            .profile {
-                width: 100%;
-            }
+        .gallery h2 {
+            font-size: 2.5em;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
 
-            .gallery img {
-                width: 80%;
-            }
+        .gallery img {
+            width: 30%;
+            margin: 15px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, filter 0.3s ease;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.05);
+            filter: brightness(1.1);
         }
 
         /* Smooth scroll effect */
@@ -255,6 +252,54 @@
                 transform: translateY(0);
             }
         }
+
+        /* Responsive Design */
+        @media screen and (max-width: 768px) {
+            .profile {
+                width: 45%;
+            }
+
+            .hero h2 {
+                font-size: 3.5em;
+            }
+
+            .hero p {
+                font-size: 1.2em;
+            }
+
+            .gallery img {
+                width: 45%;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .profile {
+                width: 80%;
+            }
+
+            .hero h2 {
+                font-size: 2.5em;
+            }
+
+            .hero p {
+                font-size: 1.1em;
+            }
+
+            .gallery img {
+                width: 80%;
+            }
+
+            nav ul {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav ul li {
+                margin: 10px 0;
+            }
+        }
+
     </style>
 </head>
 <body>
@@ -267,6 +312,7 @@
                 <ul>
                     <li><a href="#about">Tentang Kami</a></li>
                     <li><a href="#achievements">Prestasi</a></li>
+                    <li><a href="#gallery">Galeri</a></li>
                     <li><a href="#contact">Kontak</a></li>
                 </ul>
             </nav>
@@ -274,7 +320,7 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="hero smooth-scroll">
+    <section class="hero">
         <h2>Selamat datang di AEROZORTZI</h2>
         <p>Temukan potensi dan kreativitas kami di dunia pendidikan.</p>
         <a href="#about" class="btn">Lihat Lebih Lanjut</a>
@@ -287,11 +333,11 @@
         <div class="profile-container">
             <div class="profile">
                 <h4>Visi Kami</h4>
-                <p>Menciptakan generasi yang cerdas dan berkarakter.</p>
+                <p>Menjadikan Kelas Sebagai Tempat Yang Senang Untuk Pendidikan.</p>
             </div>
             <div class="profile">
                 <h4>Misi Kami</h4>
-                <p>Memberikan pendidikan yang bermutu dan relevan dengan kebutuhan zaman.</p>
+                <p>Menjadi Pelajar Yang Berguna Bagi Nusa Dan Bangsa</p>
             </div>
         </div>
     </section>
@@ -302,18 +348,29 @@
         <p>Kami bangga telah meraih berbagai penghargaan di bidang akademik dan non-akademik. Beberapa di antaranya termasuk kompetisi sains, seni, dan olahraga.</p>
         <div class="profile-container">
             <div class="profile">
-                <h4>Juara 1 Kompetisi Sains</h4>
-                <p>Diadakan oleh Universitas Negeri Jakarta pada 2024.</p>
+                <h4>Juara 1 Kompetisi Solo Song Spenega Contest</h4>
+                <p>Diadakan oleh SMPN 3 LUBUK BASUNG pada Oktober 2024.</p>
             </div>
             <div class="profile">
-                <h4>Juara 2 Lomba Basket</h4>
-                <p>Pertandingan antar sekolah di Kabupaten Agam.</p>
+                <h4>Coming Soon</h4>
+                <p>Coming Soon - Prestasi Yang Luar Biasa</p>
             </div>
         </div>
     </section>
 
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery smooth-scroll">
+        <h2>Galeri Kegiatan</h2>
+        <p>Berikut adalah beberapa momen terbaik kami dalam berbagai kegiatan sekolah.</p>
+        <div>
+            <img src="https://via.placeholder.com/500x300.png?text=Galeri+1" alt="Galeri 1">
+            <img src="https://via.placeholder.com/500x300.png?text=Galeri+2" alt="Galeri 2">
+            <img src="https://via.placeholder.com/500x300.png?text=Galeri+3" alt="Galeri 3">
+        </div>
+    </section>
+
     <!-- Instagram Section -->
-    <section class="instagram smooth-scroll">
+    <section id="contact" class="instagram smooth-scroll">
         <h2>Temui Kami di Instagram</h2>
         <p>Ikuti kami untuk lebih banyak informasi dan update terkini.</p>
         <a href="https://www.instagram.com/aerozortzi_?igsh=aDFvNHNoM210d2Fu" target="_blank">Follow @aerozortzi_</a>
